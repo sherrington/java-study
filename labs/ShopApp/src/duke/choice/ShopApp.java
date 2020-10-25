@@ -23,12 +23,18 @@ public class ShopApp {
 
     Clothing[] items = {item1, item2, item2};
 
-    System.out.println("Item 1: " + item1.description + ", " + item1.size + ", $" + item1.price);
-    System.out.println("Item 2: " + item2.description + ", " + item2.size + ", $" + item2.price);
-    System.out.println("Item 3: " + item2.description + ", " + item2.size + ", $" + item2.price);
+    // System.out.println("Item 1: " + item1.description + ", " + item1.size + ", $" + item1.price);
+    // System.out.println("Item 2: " + item2.description + ", " + item2.size + ", $" + item2.price);
+    // System.out.println("Item 3: " + item2.description + ", " + item2.size + ", $" + item2.price);
 
-    double subTotal = item1.price + item2.price * 2;
-    double total = subTotal + (subTotal * tax);
+    // double subTotal = item1.price + item2.price * 2;
+    // double total = subTotal + (subTotal * tax);
+    double total = 0;
+    System.out.println("Items in cart:");
+    for (Clothing clothing : items) {
+      System.out.println(clothing.description + ", " + clothing.size + ", $" + clothing.price);
+      total = total + clothing.price + (clothing.price * tax);
+    }
     System.out.println("Total: $" + total);
 
     int measurement = 3;
