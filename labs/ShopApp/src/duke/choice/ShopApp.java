@@ -12,30 +12,26 @@ public class ShopApp {
     System.out.println("Customer is " + c1.name + "!");
 
     Clothing item1 = new Clothing();
-    item1.description = "Blue jacket";
+    item1.description = "Blue Jacket";
     item1.price = 20.9;
     item1.size = "M";
 
     Clothing item2 = new Clothing();
-    item2.description = "Orange T-shirt";
+    item2.description = "Orange T-Shirt";
     item2.price = 10.5;
     item2.size = "S";
 
-    Clothing[] items = {item1, item2, item2};
+    Clothing item3 = new Clothing();
+    item3.description = "Blue T-Shirt";
+    item3.price = 10.5;
+    item3.size = "S";
 
-    // System.out.println("Item 1: " + item1.description + ", " + item1.size + ", $" + item1.price);
-    // System.out.println("Item 2: " + item2.description + ", " + item2.size + ", $" + item2.price);
-    // System.out.println("Item 3: " + item2.description + ", " + item2.size + ", $" + item2.price);
+    Clothing item4 = new Clothing();
+    item4.description = "Green Scarf";
+    item4.price = 5;
+    item4.size = "S";
 
-    // double subTotal = item1.price + item2.price * 2;
-    // double total = subTotal + (subTotal * tax);
-    double total = 0;
-    System.out.println("Items in cart:");
-    for (Clothing clothing : items) {
-      System.out.println(clothing.description + ", " + clothing.size + ", $" + clothing.price);
-      total = total + clothing.price + (clothing.price * tax);
-    }
-    System.out.println("Total: $" + total);
+    Clothing[] items = {item1, item2, item2, item3, item4};
 
     int measurement = 3;
 
@@ -52,5 +48,17 @@ public class ShopApp {
       default:
         c1.size = "X";
     }
+
+    double total = 0;
+    System.out.println("Items:");
+    for (Clothing clothing : items) {
+      if(total > 15) { break; }
+      
+      if(c1.size.equals(clothing.size)){
+        System.out.println(clothing.description + ", " + clothing.size + ", $" + clothing.price);
+        total = total + clothing.price + (clothing.price * tax);
+      }
+    }
+    System.out.println("Total: $" + total);
   }
 }
