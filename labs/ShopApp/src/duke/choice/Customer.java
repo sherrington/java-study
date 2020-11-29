@@ -38,4 +38,20 @@ public class Customer {
         setSize("X");
     }
   }
+
+  private Clothing[] items;
+  public void addItems(Clothing[] items){
+    this.items = items;
+  }
+  public Clothing[] getItems(){
+    return items;
+  }
+
+  public double getTotalClothingCost(){
+    double total = 0;
+    for (Clothing clothing : items) {
+      total = total + clothing.getPrice();
+    }
+    return total;
+  }
 }

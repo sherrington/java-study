@@ -31,16 +31,13 @@ public class ShopApp {
 
     Clothing[] items = {item1, item2, item2, item3, item4};
 
-    double total = 0;
+    c1.addItems(items);
+
     System.out.println("Items:");
-    for (Clothing clothing : items) {
-      if(total > 15) { break; }
-      
-      if(c1.getSize().equals(clothing.getSize())) {
+    for (Clothing clothing : c1.getItems()) {
         System.out.println(clothing.getDescription() + ", " + clothing.getSize() + ", $" + clothing.getPrice());
-        total = total + clothing.getPrice();
       }
-    }
-    System.out.println("Total: $" + total);
+
+    System.out.println("Total: $" + c1.getTotalClothingCost());
   }
 }
