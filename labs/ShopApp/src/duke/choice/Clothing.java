@@ -5,14 +5,18 @@ public class Clothing {
   private final double TAX_RATE = .2;
 
   private String description;
-  public void setDescription(String description){
+  private String size;
+  private double price;
+
+  public Clothing(String description, String size) {
     this.description = description;
+    this.size = size;
   }
+
   public String getDescription(){
     return description;
   }
 
-  private double price;
   public void setPrice(double price){
     this.price = (price > MIN_PRICE) ? price : MIN_PRICE;
   }
@@ -20,10 +24,6 @@ public class Clothing {
     return price + (price * TAX_RATE);
   }
 
-  private String size = "M";
-  public void setSize(String size){
-    this.size = size;
-  }
   public String getSize(){
     return size;
   }
