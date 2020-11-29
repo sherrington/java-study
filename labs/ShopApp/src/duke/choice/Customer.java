@@ -13,7 +13,7 @@ public class Customer {
   }
   public String getName(){
     return name;
-  };
+  }
   
   private String size;
   public void setSize(String size){
