@@ -1,8 +1,8 @@
 package duke.choice;
 
 public class Clothing {
-  private final double MIN_PRICE = 10;
-  private final double TAX_RATE = .2;
+  public static final double MIN_PRICE = 10;
+  public static final double TAX_RATE = .2;
 
   private String description;
   private String size;

@@ -7,6 +7,8 @@ public class ShopApp {
     Customer c1 = new Customer("Pinky", 3);
     System.out.println("Customer is " + c1.getName() + ", size: " + c1.getSize() + "!");
 
+    System.out.println("Min Price: " + Clothing.MIN_PRICE);
+
     Clothing item1 = new Clothing("Blue Jacket", "M");
     item1.setPrice(20.9);
 
