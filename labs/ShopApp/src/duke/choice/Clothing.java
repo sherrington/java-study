@@ -33,4 +33,9 @@ public class Clothing {
   public String getSize(){
     return size;
   }
+
+  @Override
+  public String toString(){
+    return getDescription() + ", " + getSize() + ", $" + getPrice();
+  }
 }
