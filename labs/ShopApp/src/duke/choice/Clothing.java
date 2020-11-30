@@ -1,6 +1,6 @@
 package duke.choice;
 
-public class Clothing {
+public class Clothing implements Comparable<Clothing>{
   public static final double MIN_PRICE = 10;
   public static final double TAX_RATE = .2;
   public enum Sizes {
@@ -37,5 +37,10 @@ public class Clothing {
   @Override
   public String toString(){
     return getDescription() + ", " + getSize() + ", $" + getPrice();
+  }
+
+  @Override
+  public int compareTo(Clothing c) {
+    return this.description.compareTo(c.description);
   }
 }

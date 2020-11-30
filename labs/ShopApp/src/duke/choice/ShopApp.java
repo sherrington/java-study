@@ -1,5 +1,7 @@
 package duke.choice;
 
+import java.util.Arrays;
+
 public class ShopApp {
   public static void main(String[] args) {
     System.out.println("Welcome to Duke Choice Shop!");
@@ -26,6 +28,7 @@ public class ShopApp {
     c1.addItems(items);
 
     System.out.println("Items:");
+    Arrays.sort(c1.getItems());
     for (Clothing clothing : c1.getItems()) {
         System.out.println(clothing);
       }
