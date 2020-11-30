@@ -31,5 +31,15 @@ public class ShopApp {
       }
 
     System.out.println("Total: $" + c1.getTotalClothingCost());
+
+    try {
+      System.out.println("Average cost: $" + c1.getAveragePrice());
+    } 
+    catch(ArithmeticException e){
+      System.out.println("Customer has no clothing items!");
+    }
+    catch (Exception e) {
+      System.out.println("Error in getAveragePrice(): " + e.getMessage());
+    }
   }
 }

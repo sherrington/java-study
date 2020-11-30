@@ -51,9 +51,25 @@ public class Customer {
 
   public double getTotalClothingCost(){
     double total = 0;
-    for (Clothing clothing : items) {
+    for (Clothing clothing : getItems()) {
       total = total + clothing.getPrice();
     }
     return total;
+  }
+
+  private Clothing[] getLargeItems(){
+    Clothing[] largeItems = {};
+    if(getItems().length > 0){
+      for(Clothing clothing : getItems()){
+        if(clothing.getSize().equalsIgnoreCase(Clothing.Sizes.L.toString())){
+          largeItems[largeItems.length] = clothing;
+        }
+      }
+    }
+    return largeItems;
+  }
+
+  public double getAveragePrice(){
+    return getTotalClothingCost() / getLargeItems().length;
   }
 }

@@ -3,6 +3,12 @@ package duke.choice;
 public class Clothing {
   public static final double MIN_PRICE = 10;
   public static final double TAX_RATE = .2;
+  public enum Sizes {
+    S,
+    M,
+    L,
+    X
+  }
 
   private String description;
   private String size;
